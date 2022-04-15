@@ -1,0 +1,20 @@
+CREATE TABLE inventory (ID INTEGER PRIMARY KEY, garment_type TEXT, color TEXT, size TEXT, price INTEGER);
+INSERT INTO inventory VALUES
+(1, 'shirt','red','xl',20),
+(2,'shirt','red','m',15),
+(3,'shirt','blue','l',15),
+(4,'shirt','blue','xl',20),
+(5,'shirt','black','xl',20),
+(6,'shirt','black','s',15),
+(7,'shorts','tan','xxl',45),
+(8,'shorts','tan','xl',40),
+(9,'shorts','tan','l',35),
+(10,'shorts','black','l',35),
+(11,'shorts','black','m',35),
+(12,'shorts','black','xl',40),
+(13,'shorts','black','xxl',45),
+(14,'hat','red','7 7/8',25),
+(15,'hat','blue','6 7/8',25)
+;
+SELECT * FROM inventory ORDER BY price desc;
+SELECT MAX(price),garment_type FROM inventory;
