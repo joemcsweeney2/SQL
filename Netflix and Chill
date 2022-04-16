@@ -40,7 +40,7 @@ WHERE "CharlotteChaze/BreakIntoTech"."netflix_titles_info"."title"
 SELECT "date_added","title","release_year"
  FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
  WHERE "type" = 'Movie'
- ORDER BY "date_added" ASC
+ ORDER BY "release_year" ASC
  --What is the oldest movie in the database and what year was it made?
  --2008-01-01 00:00:00	To and From New York	2006
  
