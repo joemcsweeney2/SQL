@@ -1,0 +1,46 @@
+ SELECT COUNT(*)
+ FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+ WHERE "type" = 'Movie'
+ --How many movie titles are there in the database? (movies only, not tv shows)
+ --6131
+ 
+ SELECT "date_added"
+ FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+ WHERE "type" = 'Movie' OR "type" = 'TV SHOW' 
+ ORDER BY "date_added" DESC
+ --When was the most recent batch of tv shows and/or movies added to the database?
+ --2021-09-25 00:00:00
+ 
+ SELECT "title"
+ FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+ WHERE "type" = 'Movie' OR "type" = 'TV SHOW' 
+ ORDER BY "title" ASC;
+ --List all the movies and tv shows in alphabetical order.
+ --07:19:00
+--10,000 B.C.
+--1000 Rupee Note
+--100 Days Of Solitude
+--100% Halal
+--100 Meters
+
+SELECT  "CharlotteChaze/BreakIntoTech"."netflix_titles_info"."title",
+"CharlotteChaze/BreakIntoTech"."netflix_people"."director"
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info" 
+JOIN "CharlotteChaze/BreakIntoTech"."netflix_people" 
+ON "CharlotteChaze/BreakIntoTech"."netflix_people"."show_id" 
+=
+"CharlotteChaze/BreakIntoTech"."netflix_titles_info"."show_id"
+WHERE "CharlotteChaze/BreakIntoTech"."netflix_titles_info"."title"
+=
+'Bright Star';
+--Who was the Director for the movie Bright Star?
+--Jane Campion
+ 
+ 
+SELECT "date_added","title","release_year"
+ FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+ WHERE "type" = 'Movie'
+ ORDER BY "date_added" ASC
+ --What is the oldest movie in the database and what year was it made?
+ --2008-01-01 00:00:00	To and From New York	2006
+ 
