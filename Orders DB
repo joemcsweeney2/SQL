@@ -26,7 +26,7 @@ FROM BIT_DB.FebSales
 WHERE location = "548 Lincoln St, Seattle, WA 98101"
 ;
 
-SELECT * FROM BIT_DB.FebSales;
+
 
 select 
 count(cust.acctnum), 
@@ -34,4 +34,11 @@ avg(quantity)*price
 FROM BIT_DB.FebSales Feb
 LEFT JOIN BIT_DB.customers cust
 ON FEB.orderid=cust.order_id
-WHERE Feb.Quantity>2
+WHERE Feb.Quantity>2;
+
+
+SELECT Product, SUM(Quantity),location 
+FROM BIT_DB.FebSales
+WHERE location LIKE "%Los Angeles%"
+GROUP BY Product
+ORDER BY SUM(Quantity) DESC;
